@@ -1,12 +1,15 @@
 const express = require("express");
 const connectToMongo = require("./Database");
+const cors = require('cors')
 
 // Connect Database(Mongo)
 connectToMongo();
 
 const app = express()
-const port = 3000
+const port = 5000
 
+// For Direct Browser Request
+app.use(cors())
 // For getting request body
 app.use(express.json())
 
